@@ -214,10 +214,6 @@ a:active {
 
 
 
-
-
-
-
 .plant-exploded {
   position: relative; /* puoi mettere anche sticky se vuoi che resti visibile durante lo scroll */
   width: 400px;
@@ -261,10 +257,11 @@ a:active {
 }
 
 .projects-wrapper {
-  height: 100vh; /* oppure 800px se vuoi fisso */
+  /*height: 100vh;*/ /* oppure 800px se vuoi fisso */
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 300px;
 }
 
 .project-slide {
@@ -302,6 +299,7 @@ iframe {
     flex-direction: column;
     align-items: center;
     height: auto;
+    gap: 150px; /* spazio tra le sezioni */
   }
 
   .description,
@@ -338,10 +336,10 @@ iframe {
   gap: 2rem;          /* spazio tra le colonne */
   flex-wrap: wrap;    /* per andare a capo su schermi piccoli */
   height: 100px;
+  padding: 60px;
 }
 
 .contact-info {
-  padding: 40px;
   flex: 1 1 300px;    /* larghezza minima e massima flessibile */
 }
 
@@ -380,6 +378,32 @@ iframe {
 }
 
 
+@media (max-width: 768px) {
+  .project {
+    height: 1050px;
+  }
+  .plant-wrapper {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .plant-block {
+    height: 120px;
+  }
+
+  .contact-columns {
+  display: flex;
+  gap: 2rem;          /* spazio tra le colonne */
+  flex-wrap: wrap;    /* per andare a capo su schermi piccoli */
+  height: 100px;
+  padding: 20px;
+}
+
+.contact-info {
+  flex: 1 1 300px;    /* larghezza minima e massima flessibile */
+}
+}
 
 
 

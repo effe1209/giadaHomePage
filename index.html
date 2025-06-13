@@ -25,7 +25,7 @@
     <div class="overlay"></div>
     <div class="hero-content">
       <h1>Giada Liberto</h1>
-      <p>Ingegneria Edile architettura</p>
+      <p>Ingegneria Edile-Architettura</p>
       <a href="#about" class="btn">Scopri di più</a>
     </div>
   </section>
@@ -73,7 +73,7 @@
   gsap.utils.toArray(".project-slide").forEach((slide) => {
     // Animazione globale del contenitore
     gsap.fromTo(slide,
-      { opacity: 0, y: 200 },
+      { opacity: 0, y: 100 },
       {
         opacity: 1,
         y: 0,
@@ -88,11 +88,11 @@
 
     // Animazione della descrizione (entra da sinistra)
     gsap.fromTo(slide.querySelector('.description'),
-      { opacity: 0, x: -150 },
+      { opacity: 0, x: -100 },
       {
         opacity: 1,
         x: 0,
-        duration: 1.5,
+        duration: 0.6,
         ease: "power3.out",
         scrollTrigger: {
           trigger: slide,
@@ -103,11 +103,11 @@
 
     // Animazione dell’anteprima (entra da destra)
     gsap.fromTo(slide.querySelector('.preview'),
-      { opacity: 0, x: 150 },
+      { opacity: 0, x: 100 },
       {
         opacity: 1,
         x: 0,
-        duration: 1.5,
+        duration: 0.6,
         ease: "power3.out",
         scrollTrigger: {
           trigger: slide,
@@ -122,7 +122,7 @@ gsap.utils.toArray(".about").forEach((slide) => {
       {
         opacity: 1,
         y: 0,
-        duration: 0.3,
+        duration: 0.6,
         ease: "power3.out",
         scrollTrigger: {
           trigger: slide,

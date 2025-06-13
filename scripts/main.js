@@ -53,7 +53,7 @@ blocks.forEach((block, i) => {
       start: "top top+=200",
       end: "bottom top+=820",
       scrub: true,
-      markers: true, // Imposta a true per debug
+      markers: false, // Imposta a true per debug
       onUpdate: (self) => {
         // Calcola opacità dinamica per questo blocco
         const progress = self.progress; // tra 0 e 1

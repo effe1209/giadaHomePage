@@ -398,6 +398,7 @@ iframe {
   flex-wrap: wrap;    /* per andare a capo su schermi piccoli */
   height: 100px;
   padding: 20px;
+  align-content: center;
 }
 
 .contact-info {

@@ -56,7 +56,7 @@ ScrollTrigger.matchMedia({
           start: "top top+=100",
           end: "bottom top+=600",
           scrub: true,
-          markers: true, // per debug
+          markers: false, // per debug
           onUpdate: (self) => {
             const progress = self.progress;
             const threshold = i * 0.15;

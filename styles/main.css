@@ -1,0 +1,386 @@
+/* Reset di base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #fff;
+  background-color: #111;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* Hero section */
+.hero {
+  background: url('../assets/background.jpeg') center/cover no-repeat;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid white;
+  color: white;
+  transition: all 0.3s ease;
+  border-radius: 15px;
+}
+
+.btn:hover {
+  background: white;
+  color: black;
+}
+
+/* About section */
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem;
+  background-color: #1a1a1a;
+  text-align: center;
+}
+
+.profile-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-text p {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Contact section */
+.contact {
+  padding: 3rem 2rem;
+  text-align: center;
+  background-color: #2e2e2e;
+}
+
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contact a {
+  color: #00bcd4;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  padding: 1rem;
+  background-color: #000;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Project section */
+.project {
+  padding: 4rem 2rem;
+  background-color: #111;
+  color: white;
+  text-align: center;
+}
+
+.project h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.project p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Layout affiancato */
+.project-windows {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap; /* per mobile responsivo */
+  margin-top: 2rem;
+}
+
+/* Finestre comuni */
+.project .window {
+  flex: 1 1 45%;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  min-width: 300px;
+  height: 400px;
+  overflow: hidden;
+}
+
+/* Rilievo */
+.project .left {
+  background-color: #1f1f1f;
+  padding: 1.5rem;
+  text-align: left;
+}
+
+/* Incavatura */
+.project .right {
+  background-color: #1f1f1f;
+  padding: 0;
+}
+
+/* Iframe */
+.project .iframe-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.project .right iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  pointer-events: none;
+}
+
+.project .right:hover iframe {
+  pointer-events: auto;
+}
+
+a {
+  color: #00bcd4
+}
+
+a:hover {
+  color: #00bfff; /* colore al passaggio del mouse */
+}
+
+a:active {
+  color: #ff6347; /* colore mentre si clicca */
+}
+
+
+
+
+
+
+
+
+.plant-exploded {
+  position: relative; /* puoi mettere anche sticky se vuoi che resti visibile durante lo scroll */
+  width: 400px;
+  height: 400px;
+  margin: 3rem auto; /* centra la sezione */
+  perspective: 1200px; /* fondamentale per l’effetto 3D */
+  user-select: none; /* previeni la selezione accidentale */
+  z-index: 10;
+}
+
+.plant-exploded .layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 400px;
+  border-radius: 1rem;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  background: #222;
+  pointer-events: auto;
+  /* aggiungo transizione per animazioni più morbide */
+  transition: transform 0.3s ease;
+  will-change: transform; /* ottimizza le performance per animazioni */
+}
+
+.plant-exploded .layer img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 1rem;
+  filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.5));
+  user-select: none;
+  pointer-events: none; /* disabilito eventi sull’immagine */
+}
+
+
+
+.project {
+  padding: 2rem;
+}
+
+.projects-wrapper {
+  height: 100vh; /* oppure 800px se vuoi fisso */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-slide {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  opacity: 0; /* inizialmente invisibile */
+  transform: translateY(100px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  height: 400px;
+  justify-content: space-around;
+}
+
+.description, .preview {
+  width: 45%;
+}
+
+iframe {
+  width: 100%;
+  height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.project-slide img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .project-slide {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .description,
+  .preview {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 15px;
+  }
+
+  iframe {
+    height: 250px;
+  }
+}
+
+.swiper {
+  transition: opacity 2s ease-in-out;
+}
+
+.preview .swiper {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contact-columns {
+  display: flex;
+  gap: 2rem;          /* spazio tra le colonne */
+  flex-wrap: wrap;    /* per andare a capo su schermi piccoli */
+  height: 100px;
+}
+
+.contact-info {
+  padding: 40px;
+  flex: 1 1 300px;    /* larghezza minima e massima flessibile */
+}
+
+
+
+
+.plant-wrapper {
+  position: relative; /* contesto per i figli assoluti */
+  width: 100%;        /* occupa tutto lo spazio disponibile dentro project-slide */
+  max-width: 600px;   /* o come vuoi limitarne la larghezza */
+  margin: 0 auto;
+}
+
+
+.plant-block {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 210px; /* altezza fissa per il blocco */
+  opacity: 1;
+  transform: translateY(0);
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+.plant-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  pointer-events: none;
+  user-select: none;
+}
+
+
+
+
+
+

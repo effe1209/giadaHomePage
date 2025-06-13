@@ -262,6 +262,7 @@ a:active {
   align-items: center;
   justify-content: center;
   gap: 300px;
+  height: 80vh;
 }
 
 .project-slide {
@@ -298,7 +299,6 @@ iframe {
   .project-slide {
     flex-direction: column;
     align-items: center;
-    height: auto;
     gap: 150px; /* spazio tra le sezioni */
   }
 
@@ -311,6 +311,11 @@ iframe {
 
   iframe {
     height: 250px;
+  }
+
+  .projects-wrapper {
+    height: 800px;
+    display: relative;
   }
 }
 

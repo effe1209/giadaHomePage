@@ -51,7 +51,7 @@ blocks.forEach((block, i) => {
       start: "top top+=100",
       end: "bottom top+=400",
       scrub: true,
-      markers: true, // Imposta a true per debug
+      markers: false, // Imposta a true per debug
     }
   });
 });

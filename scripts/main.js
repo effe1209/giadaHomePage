@@ -35,23 +35,32 @@ const blocks = gsap.utils.toArray(".plant-block");
 blocks.forEach((block, i) => {
   gsap.set(block, {
     y: 0,
-    opacity: 1,
+    opacity: 0.5,
     zIndex: blocks.length - i,
     position: "absolute",
-    top: -250,
+    top: -300,
     left: 0,
     right: 0,
+    effect: 'fade',
   });
 
   gsap.to(block, {
     y: i * 150,
+    opacity: 1, // appare con lo scroll
     ease: "power3.out",
     scrollTrigger: {
       trigger: ".projects-wrapper",
-      start: "top top+=100",
-      end: "bottom top+=400",
+      start: "top top+=200",
+      end: "bottom top+=820",
       scrub: true,
-      markers: false, // Imposta a true per debug
+      markers: true, // Imposta a true per debug
+      onUpdate: (self) => {
+        // Calcola opacità dinamica per questo blocco
+        const progress = self.progress; // tra 0 e 1
+        const threshold = i * 0.15;     // ritardo basato su i
+        const fadeIn = Math.min(Math.max((progress - threshold) * 4, 0), 1);
+        gsap.set(block, { opacity: fadeIn });
+      }
     }
   });
 });

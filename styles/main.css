@@ -293,6 +293,7 @@ iframe {
     border-radius: 10px;
     max-height: 400px;
     object-fit: cover;
+    overflow: hidden;
 }
 
 @media (max-width: 768px) {
@@ -412,5 +413,198 @@ iframe {
 }
 
 
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+
+.spinner-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  animation: bounce 1s ease-in-out infinite;
+  z-index: 1000;
+}
+
+.spinner {
+  width: 100%;
+  height: 100%;
+  border: 5px solid rgba(255, 255, 255, 0.2);
+  border-top: 5px solid #fff;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  25% { transform: translateY(-5px); }  /* 20px su */
+  75% { transform: translateY(5px); }   /* 20px giù */
+}
+
+.rotating-circle {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 300vmin;
+  height: 300vmin;
+  margin-top: -150vmin;
+  margin-left: -150vmin;
+  border-radius: 50%;
+  background: conic-gradient(#111 0deg 180deg, #222 180deg 360deg);
+  z-index: 1;
+}
+
+/* Avvia animazione solo quando viene aggiunta la classe start */
+.rotating-circle.start {
+  animation: rotate180 2s ease-out forwards;
+}
+
+@keyframes rotate180 {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(180deg); }
+}
+
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: black; /* fallback */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left {
+  left: 50%;
+  transform: translate(-100%, -50%);
+  background-position: left center;
+}
+
+.right {
+  left: 51%;
+  transform: translate(0%, -50%);
+  background-position: right center;
+}
+
+/* Movimento diagonale verso il basso per simulare esplosione opposta */
+.explode .left {
+  /*transform: translate(-50%, -800%);*/
+  transform: translate(-800%, -50%);
+  opacity: 0;
+}
+
+.explode .right {
+  transform: translate(800%, -50%);
+  opacity: 0;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.half {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  width: 300px;
+  height: 300px;
+  background-image: url('../assets/caric.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 3s ease-in-out, opacity 1s ease-in-out 0.5s;
+  opacity: 1;
+  z-index: 10;
+}
+
+/* Taglio diagonale: da sinistra in alto a destra in basso */
+.left {
+  clip-path: inset(0 50% 0 0); /* mostra la metà sinistra */
+  margin-left: 16%;
+}
+
+.right {
+  clip-path: inset(0 0 0 52%); /* mostra la metà destra */
+  margin-left: 3%;
+}
+
+
+@media (max-width: 768px) {
+
+.spinner-container {
+  width: 370px;
+  height: 370px;
+  margin-top: -200px;
+  margin-left: -200px;
+}
+
+  .half {
+    top: 49%;
+    left: 10%;
+    width: 300px;
+    height: 300px;
+}
+  /* Taglio diagonale: da sinistra in alto a destra in basso */
+.left {
+  clip-path: polygon(0 0, 100% 0, 0  100%);
+  margin-left: 80%;
+}
+
+/* Taglio opposto: da destra in alto a sinistra in basso */
+.right {
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+}
+
+.diagonal-line {
+  position: absolute;
+  top: 36%;
+  left: 49.95%;           
+  width: 250px;  /* o una misura coerente con l'immagine */
+  height: 400px;
+  background-image: url('../assets/line.png');  
+    background-size: contain;
+  background-repeat: no-repeat;
+  transform: translateX(-50%);
+  z-index: 100;
+  opacity: 1;
+}
+
+.diagonal-line.fade {
+  animation: fadeOut 1s ease-out 0s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
 
 

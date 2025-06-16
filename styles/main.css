@@ -573,13 +573,13 @@ iframe {
 }
   /* Taglio diagonale: da sinistra in alto a destra in basso */
 .left {
-  clip-path: polygon(0 0, 100% 0, 0  100%);
-  margin-left: 80%;
+  clip-path: inset(0 50% 0 0); /* mostra la metà sinistra */
+  margin-left: 74%;
 }
 
 /* Taglio opposto: da destra in alto a sinistra in basso */
 .right {
-  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  clip-path: inset(0 0 0 52%); /* mostra la metà destra */
 }
 }
 

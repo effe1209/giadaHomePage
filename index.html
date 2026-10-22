@@ -1,170 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Giada | Ingegneria</title>
+  <meta name="theme-color" content="#f5f4ee" />
+  <meta name="description" content="Il portfolio di Giada Liberto, studentessa di Ingegneria Edile-Architettura. Progetti, ricerca e idee per gli spazi di domani." />
+  <title>Giada Liberto — Ingegneria Edile-Architettura</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link rel="icon" href="assets/icon.png" type="image/png" />
   <link rel="stylesheet" href="styles/main.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter:wght@300;500&display=swap" rel="stylesheet">
-  <link rel="icon" href="assets/icon.png" type="image/png">
-
-
-  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-    <!-- Swiper CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="scripts/main.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
 
-  <div id="preloader">
-    <div id="circle" class="rotating-circle"></div>
-    <div class="diagonal-line"></div>
-    <div class="container" id="image-container">
-      <div class="half left bouncing"></div>
-      <div class="half right bouncing"></div>
-    </div>
-  </div>
-
-  <section class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1>Giada Liberto</h1>
-      <p>Ingegneria Edile-Architettura</p>
-      <a href="#about" class="btn">Scopri di più</a>
-    </div>
-  </section>
-
-  <section id="about" class="about">
-    <img src="assets/profile.png" alt="Giada profile" class="profile-img">
-    <div class="about-text">
-      <h2>Chi sono?</h2>
-      <p>
-        Studio Ingegneria Edile, mi occupo di progettazione architettonica e ingegneria strutturale.
-    </div>
-  </section>
-
-<section class="project">
-  <h2>Project</h2>
-  <p>Scorri per scoprire i miei progetti.</p>
-
-  <div class="projects-wrapper" style="height: 80vh;">
-    <!-- Progetto 1 -->
-    <div class="project-slide" >
-      <div class="description">
-        <h3>🏫 Scuola Primaria Cromatica</h3>
-        <p>Progetto architettonico di una scuola elementare dove <strong>il colore diventa linguaggio educativo: ogni aula è identificata da una porta di colore diverso, rendendo l’orientamento più intuitivo e stimolante per i bambini.</strong></p> <p>La struttura include una <strong>palestra interna con grandi arcate a vista, che fondono funzionalità sportiva e qualità estetica, creando un ambiente aperto e luminoso. Nell’aula di arte, ogni sedia ha un colore diverso, incoraggiando l’espressione individuale e la creatività fin dal primo sguardo.</strong></p> <p>Un progetto pensato per crescere con chi lo abita: inclusivo, accogliente e a misura di bambino.</p>
+  <header class="hero" id="inizio">
+    <div class="hero-shade" aria-hidden="true"></div>
+    <nav class="site-nav" aria-label="Navigazione principale">
+      <a class="brand" href="#inizio" aria-label="Giada Liberto, torna all’inizio">
+        <span class="brand-mark">GL</span>
+        <span class="brand-name">Giada Liberto<small>Portfolio personale</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="#chi-sono">Chi sono</a>
+        <a href="#progetti">Progetti</a>
+        <a class="nav-contact" href="#contatti">Contatti <span aria-hidden="true">↗</span></a>
       </div>
+    </nav>
 
-        <div class="plant-wrapper">
-          <div class="plant-block block-1">
-            <img src="assets/1.png" alt="Zona Giorno">
+    <div class="hero-content" id="contenuto">
+      <p class="eyebrow hero-eyebrow"><span class="status-dot"></span> Ingegneria Edile-Architettura</p>
+      <h1>Giada<br /><em>Liberto</em></h1>
+      <div class="hero-bottom">
+        <p>Progetto spazi che mettono<br class="desktop-break" /> al centro le persone.</p>
+        <a class="round-link" href="#progetti" aria-label="Scopri i progetti"><span aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+    <span class="hero-caption">Schönbrunn, Vienna</span>
+  </header>
+
+  <main>
+    <section class="about section-shell" id="chi-sono" aria-labelledby="about-title">
+      <div class="about-image-wrap" data-reveal>
+        <img class="profile-img" src="assets/profile.png" alt="Ritratto di Giada Liberto" />
+        <span class="image-note">Uno sguardo curioso,<br />sempre in movimento.</span>
+        <span class="image-index" aria-hidden="true">01</span>
+      </div>
+      <div class="about-copy" data-reveal>
+        <p class="eyebrow section-eyebrow"><span>01</span> — Piacere, Giada</p>
+        <h2 id="about-title">Disegnare luoghi<br />in cui <em>stare bene.</em></h2>
+        <p class="about-description">Studio Ingegneria Edile-Architettura e mi occupo di progettazione architettonica e ingegneria strutturale. Mi interessa il modo in cui gli spazi possono accogliere, orientare e accompagnare le persone nella vita di ogni giorno.</p>
+        <a class="text-link" href="#contatti">Parliamone <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="about-stamp" aria-hidden="true"><span>FORMA<br />&amp; FUNZIONE</span><b>✳</b></div>
+    </section>
+
+    <section class="projects-section" id="progetti" aria-labelledby="projects-title">
+      <div class="section-shell projects-inner">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow section-eyebrow"><span>02</span> — Selezione</p>
+          <h2 id="projects-title">Idee che prendono<br /><em>spazio.</em></h2>
+          <p class="section-intro">Una selezione di progetti e sperimentazioni, tra attenzione al dettaglio e cura per chi vivrà gli spazi.</p>
+        </div>
+
+        <article class="project-card" aria-labelledby="school-title">
+          <div class="project-intro" data-reveal>
+            <div>
+              <span class="project-number">Progetto 01 <span aria-hidden="true">/</span> Architettura</span>
+              <h3 id="school-title">Scuola Primaria<br /><em>Cromatica</em></h3>
+            </div>
+            <p>Una scuola elementare dove il colore diventa linguaggio e strumento di orientamento. Le porte colorate rendono le aule più facili da riconoscere; le grandi arcate a vista della palestra valorizzano uno spazio luminoso, mentre le sedie di colori diversi nell’aula d’arte invitano alla creatività e all’espressione personale.</p>
           </div>
-          <div class="plant-block block-2">
-            <img src="assets/2.png" alt="Zona Notte">
+
+          <div class="project-gallery" aria-label="Elaborati del progetto Scuola Primaria Cromatica">
+            <figure class="drawing-card drawing-card-feature" data-reveal>
+              <div class="drawing-image"><img src="assets/1.png" alt="Elaborato architettonico della Scuola Primaria Cromatica, tavola 1" loading="lazy" /></div>
+              <figcaption><span>Elaborato di progetto</span><span>01 <i>↗</i></span></figcaption>
+            </figure>
+            <figure class="drawing-card" data-reveal>
+              <div class="drawing-image"><img src="assets/2.png" alt="Elaborato architettonico della Scuola Primaria Cromatica, tavola 2" loading="lazy" /></div>
+              <figcaption><span>Elaborato di progetto</span><span>02 <i>↗</i></span></figcaption>
+            </figure>
+            <figure class="drawing-card" data-reveal>
+              <div class="drawing-image"><img src="assets/3.png" alt="Elaborato architettonico della Scuola Primaria Cromatica, tavola 3" loading="lazy" /></div>
+              <figcaption><span>Elaborato di progetto</span><span>03 <i>↗</i></span></figcaption>
+            </figure>
           </div>
-          <div class="plant-block block-3">
-            <img src="assets/3.png" alt="Servizi">
+          <p class="project-footnote"><span class="footnote-star" aria-hidden="true">✳</span> Un progetto pensato per crescere con chi lo abita: inclusivo, accogliente e a misura di bambino.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contatti" aria-labelledby="contact-title">
+      <div class="contact-inner section-shell" data-reveal>
+        <div class="contact-heading">
+          <p class="eyebrow"><span>03</span> — Restiamo in contatto</p>
+          <h2 id="contact-title">Hai un’idea?<br /><em>Scrivimi.</em></h2>
+        </div>
+        <div class="contact-details">
+          <a class="email-link" href="mailto:giada.249g@gmail.com">giada.249g@gmail.com <span aria-hidden="true">↗</span></a>
+          <a class="email-link secondary-email" href="mailto:francesco.fiaschi2002@gmail.com">francesco.fiaschi2002@gmail.com <span aria-hidden="true">↗</span></a>
+          <div class="social-links">
+            <a href="https://github.com/effe1209" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+            <a href="https://linkedin.com/in/francesco-fiaschi-537b32295" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
           </div>
         </div>
-    </div>
-  </div>
-</section>
+        <span class="contact-decoration" aria-hidden="true">✳</span>
+      </div>
+    </section>
+  </main>
 
-
-<script>
-  gsap.registerPlugin(ScrollTrigger);
-
-  gsap.utils.toArray(".project-slide").forEach((slide) => {
-    // Animazione globale del contenitore
-    gsap.fromTo(slide,
-      { opacity: 0, y: 100 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 2,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: slide,
-          start: "top 80%",
-          toggleActions: "play none none reverse"
-        }
-      });
-
-    // Animazione della descrizione (entra da sinistra)
-    gsap.fromTo(slide.querySelector('.description'),
-      { opacity: 0, x: -100 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 0.6,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: slide,
-          start: "top 85%",
-          toggleActions: "play none none reverse"
-        }
-      });
-
-    // Animazione dell’anteprima (entra da destra)
-    gsap.fromTo(slide.querySelector('.preview'),
-      { opacity: 0, x: 100 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 0.6,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: slide,
-          start: "top 85%",
-          toggleActions: "play none none reverse"
-        }
-      });
-    });
-gsap.utils.toArray(".about").forEach((slide) => {
-    gsap.fromTo(slide.querySelector('.profile-img'),
-      { opacity: 0, y: 150 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: slide,
-          start: "top 85%",
-          toggleActions: "play none none reverse"
-        }
-      });
-  });
-</script>
-
-
-<section class="contact">
-  <h2>Contatti</h2>
-  <div class="contact-columns">
-        <div class="contact-info">
-      <p>✉️ giada.249g@gmail.com</p>
-    </div>
-    <div class="contact-info">
-      <p>✉️ francesco.fiaschi2002@gmail.com</p>
-      <p>🔗 
-        <a href="https://github.com/effe1209" target="_blank">GitHub</a> | 
-        <a href="https://linkedin.com/in/francesco-fiaschi-537b32295" target="_blank">LinkedIn</a>
-      </p>
-    </div>
-  </div>
-</section>
-
-
-
-  <footer>
-    <p>&copy; 2025 Francesco Fiaschi. Tutti i diritti riservati.</p>
+  <footer class="site-footer">
+    <a class="footer-brand" href="#inizio">GL<span>.</span></a>
+    <p>© 2025 Francesco Fiaschi. Tutti i diritti riservati.</p>
+    <a class="back-top" href="#inizio">Torna su <span aria-hidden="true">↑</span></a>
   </footer>
-
-  <script src="scripts/main.js"></script>
 </body>
 </html>

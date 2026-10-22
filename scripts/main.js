@@ -23,7 +23,7 @@ if (unfoldTrack) {
   const layers = [
     {
       element: unfoldTrack.querySelector('.unfold-roof'),
-      from: -28, to: -100, tiltFrom: 0, tiltTo: -15,
+      from: -28, to: -128, tiltFrom: 0, tiltTo: -18,
       start: 0.03, end: 0.66, labelStart: 0.02, labelEnd: 0.29,
     },
     {
@@ -33,11 +33,12 @@ if (unfoldTrack) {
     },
     {
       element: unfoldTrack.querySelector('.unfold-grounds'),
-      from: 28, to: 100, tiltFrom: 0, tiltTo: 10,
+      from: 28, to: 128, tiltFrom: 0, tiltTo: 12,
       start: 0.24, end: 0.84, labelStart: 0.48, labelEnd: 0.76,
     },
   ];
   const steps = [...unfoldTrack.querySelectorAll('[data-step]')];
+  const unfoldStage = unfoldTrack.querySelector('.unfold-sticky');
   let scrollFrame = null;
 
   const phaseProgress = (progress, start, end) => {
@@ -47,7 +48,7 @@ if (unfoldTrack) {
 
   const renderUnfold = (progress) => {
     const compact = window.matchMedia('(max-width: 620px)').matches;
-    const distanceScale = compact ? 0.78 : 1;
+    const distanceScale = compact ? Math.min(0.62, window.innerHeight / 1000) : 1;
 
     layers.forEach(({ element, from, to, tiltFrom, tiltTo, start, end, labelStart, labelEnd }) => {
       const opening = phaseProgress(progress, start, end);
@@ -72,7 +73,7 @@ if (unfoldTrack) {
   const updateUnfold = () => {
     scrollFrame = null;
     const rect = unfoldTrack.getBoundingClientRect();
-    const range = unfoldTrack.offsetHeight - window.innerHeight;
+    const range = unfoldTrack.offsetHeight - unfoldStage.offsetHeight;
     const progress = range > 0 ? Math.min(1, Math.max(0, -rect.top / range)) : 1;
     renderUnfold(reduceMotion ? 1 : progress);
   };

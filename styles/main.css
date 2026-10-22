@@ -136,16 +136,20 @@ a { color: inherit; }
   align-items: center;
   gap: clamp(.5rem, 2.2vw, 2rem);
   overflow: hidden;
-  padding-block: 2.5rem 3.5rem;
+  padding: 2rem 1.5rem 2.5rem;
+  border: 1px solid rgba(32,53,45,.12);
+  border-radius: 3px 32px 3px 3px;
+  background: linear-gradient(145deg, #f4f3ec, #ebeae2);
+  box-shadow: 0 22px 55px rgba(32,53,45,.055);
 }
 .unfold-copy { position: relative; z-index: 2; }
-.unfold-kicker { display: flex; align-items: center; gap: .65rem; margin: 0; color: var(--muted); font-size: .62rem; font-weight: 600; letter-spacing: .11em; text-transform: uppercase; }
+.unfold-kicker { display: flex; align-items: center; gap: .65rem; margin: 0; color: var(--muted); font-size: .58rem; font-weight: 600; letter-spacing: .11em; text-transform: uppercase; }
 .unfold-kicker .status-dot { width: .4rem; height: .4rem; background: var(--rust); box-shadow: 0 0 0 4px rgba(202,117,94,.12); }
-.unfold-copy h4 { margin: 1.35rem 0 .85rem; font-family: var(--serif); font-size: clamp(2.4rem, 4.3vw, 3.9rem); font-weight: 400; letter-spacing: -.05em; line-height: .98; }
+.unfold-copy h4 { margin: 1.2rem 0 .75rem; font-family: var(--serif); font-size: clamp(2.15rem, 3.8vw, 3.45rem); font-weight: 400; letter-spacing: -.05em; line-height: .98; }
 .unfold-copy h4 em { color: var(--rust); }
-.unfold-copy > p:not(.unfold-kicker) { max-width: 290px; margin: 0; color: var(--muted); font-size: .79rem; line-height: 1.75; }
+.unfold-copy > p:not(.unfold-kicker) { max-width: 290px; margin: 0; color: var(--muted); font-size: .73rem; line-height: 1.75; }
 .unfold-steps { display: grid; gap: .65rem; margin: 1.8rem 0 0; padding: 0; list-style: none; }
-.unfold-steps li { display: flex; align-items: center; gap: .8rem; color: #8b958d; font-size: .72rem; transition: color .25s ease, transform .25s ease; }
+.unfold-steps li { display: flex; align-items: center; gap: .8rem; color: #8b958d; font-size: .68rem; transition: color .25s ease, transform .25s ease; }
 .unfold-steps li span { color: #aeb5ae; font-size: .59rem; letter-spacing: .08em; }
 .unfold-steps li[aria-current="step"] { color: var(--ink); font-weight: 600; transform: translateX(4px); }
 .unfold-steps li[aria-current="step"] span { color: var(--rust); }
@@ -153,7 +157,7 @@ a { color: inherit; }
   position: relative;
   display: grid;
   min-width: 0;
-  min-height: 400px;
+  min-height: 500px;
   place-items: center;
   overflow: hidden;
   isolation: isolate;
@@ -183,7 +187,7 @@ a { color: inherit; }
   background: linear-gradient(90deg, transparent, rgba(32,53,45,.17), transparent);
   content: "";
 }
-.unfold-model { position: relative; z-index: 1; width: 100%; max-width: 720px; aspect-ratio: 2.25 / 1; transform-style: preserve-3d; }
+.unfold-model { position: relative; z-index: 1; width: 100%; max-width: 600px; aspect-ratio: 2.25 / 1; transform-style: preserve-3d; }
 .unfold-layer { position: absolute; inset: 0; display: grid; place-items: center; margin: 0; transform-origin: center; transform-style: preserve-3d; }
 .unfold-layer img { display: block; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 12px 12px rgba(32,53,45,.08)); }
 .unfold-roof { z-index: 3; transform: translate3d(0, -28px, 0); }
@@ -191,7 +195,7 @@ a { color: inherit; }
 .unfold-grounds { z-index: 1; transform: translate3d(0, 28px, 0); }
 .unfold-layer figcaption { position: absolute; top: 50%; right: 0; display: flex; align-items: center; gap: .55rem; padding: .38rem .65rem; color: var(--ink); background: rgba(248,247,242,.94); border: 1px solid rgba(32,53,45,.11); border-radius: 999px; font-size: .55rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; opacity: 1; transform: translateY(-50%); white-space: nowrap; }
 .unfold-layer figcaption span { color: var(--muted); font-weight: 500; letter-spacing: .03em; text-transform: none; }
-.unfold-scroll-hint { position: absolute; right: 0; bottom: 1rem; margin: 0; color: #8b958d; font-size: .61rem; letter-spacing: .08em; text-transform: uppercase; }
+.unfold-scroll-hint { position: absolute; right: 1.5rem; bottom: .85rem; margin: 0; color: #8b958d; font-size: .58rem; letter-spacing: .08em; text-transform: uppercase; }
 .unfold-scroll-hint span { margin-left: .45rem; color: var(--rust); font-size: .9rem; }
 .project-footnote { display: flex; align-items: start; gap: .75rem; max-width: 560px; margin: 2.5rem 0 0; color: var(--muted); font-family: var(--serif); font-size: 1.18rem; line-height: 1.45; }
 .footnote-star { color: var(--rust); font-family: var(--sans); font-size: 1.25rem; }
@@ -268,19 +272,19 @@ a { color: inherit; }
   .project-intro { display: block; padding-bottom: 1.5rem; }
   .project-intro h3 { font-size: clamp(2.7rem, 12vw, 3.8rem); }
   .project-intro > p { max-width: 500px; margin-top: 1.25rem; }
-  .unfold-sticky { display: flex; min-height: 660px; flex-direction: column; align-items: stretch; justify-content: center; gap: .4rem; padding-block: 2.4rem 3.8rem; }
-  .unfold-copy h4 { margin: .75rem 0 .45rem; font-size: clamp(2.35rem, 10vw, 3.2rem); }
-  .unfold-copy > p:not(.unfold-kicker) { max-width: 390px; font-size: .72rem; }
+  .unfold-sticky { display: flex; min-height: 660px; flex-direction: column; align-items: stretch; justify-content: center; gap: .4rem; padding: 1.4rem .8rem 2.7rem; }
+  .unfold-copy h4 { margin: .7rem 0 .4rem; font-size: clamp(2.1rem, 9vw, 2.85rem); }
+  .unfold-copy > p:not(.unfold-kicker) { max-width: 390px; font-size: .68rem; }
   .unfold-steps { display: flex; justify-content: space-between; gap: .35rem; margin-top: .95rem; }
-  .unfold-steps li { align-items: flex-start; flex-direction: column; gap: .05rem; font-size: .62rem; }
+  .unfold-steps li { align-items: flex-start; flex-direction: column; gap: .05rem; font-size: .57rem; }
   .unfold-steps li[aria-current="step"] { transform: translateY(-2px); }
-  .unfold-visual { width: 100%; min-height: 250px; flex: 1; }
+  .unfold-visual { width: 100%; min-height: 300px; flex: 1; }
   .unfold-model { width: 100%; aspect-ratio: 1.55 / 1; }
   .unfold-roof { transform: translate3d(0, -20px, 0); }
   .unfold-grounds { transform: translate3d(0, 20px, 0); }
   .unfold-layer figcaption { top: 50%; right: 0; gap: .32rem; padding: .3rem .48rem; font-size: .46rem; }
   .unfold-layer figcaption span { font-size: .53rem; }
-  .unfold-scroll-hint { bottom: 1.5rem; font-size: .55rem; }
+  .unfold-scroll-hint { right: 1rem; bottom: .7rem; font-size: .52rem; }
   .project-footnote { margin-top: 1.8rem; font-size: 1.05rem; }
   .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
   .contact-heading h2 { font-size: clamp(4rem, 17vw, 6.5rem); }

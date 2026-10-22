@@ -2,6 +2,17 @@ const revealItems = document.querySelectorAll('[data-reveal]');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 document.documentElement.classList.add('js');
 
+document.querySelectorAll('.survey-image').forEach((image) => {
+  const frame = image.closest('.survey-image-frame');
+  const showImage = () => frame.classList.add('has-image');
+
+  if (image.complete && image.naturalWidth > 0) showImage();
+  else {
+    image.addEventListener('load', showImage, { once: true });
+    image.addEventListener('error', () => image.hidden = true, { once: true });
+  }
+});
+
 if (reduceMotion || !('IntersectionObserver' in window)) {
   revealItems.forEach((item) => item.classList.add('is-visible'));
 } else {

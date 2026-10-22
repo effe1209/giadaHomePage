@@ -121,12 +121,12 @@ a { color: inherit; }
 .section-heading h2 { margin-bottom: 1.2rem; }
 .section-intro { max-width: 330px; color: var(--muted); font-size: .9rem; line-height: 1.8; }
 .project-card { min-width: 0; }
-.project-intro { display: flex; align-items: end; justify-content: space-between; gap: 2rem; padding: .35rem 0 2rem; border-bottom: 1px solid rgba(32,53,45,.17); }
+.project-intro { display: flex; align-items: end; justify-content: space-between; gap: 2rem; padding: .35rem 0 2rem; }
 .project-number { display: block; margin-bottom: 1.05rem; color: var(--muted); font-size: .66rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
 .project-number span { margin-inline: .4rem; color: var(--rust); }
 .project-intro h3 { margin: 0; font-family: var(--serif); font-size: clamp(2.5rem, 4.4vw, 4.1rem); font-weight: 400; letter-spacing: -.045em; line-height: .98; }
 .project-intro h3 em { color: var(--rust); }
-.project-intro > p { max-width: 270px; margin: 0 0 .1rem; color: var(--muted); font-size: .81rem; line-height: 1.8; transform: translateY(.9rem); }
+.project-intro > p { flex: 0 1 340px; max-width: 340px; margin: 0 0 .1rem; color: var(--muted); font-size: .81rem; line-height: 1.8; transform: translateY(1.1rem); }
 .unfold-scroll { position: relative; height: auto; }
 .unfold-sticky {
   position: relative;
@@ -197,6 +197,32 @@ a { color: inherit; }
 .unfold-layer figcaption span { color: var(--muted); font-weight: 500; letter-spacing: .03em; text-transform: none; }
 .unfold-scroll-hint { position: absolute; right: 1.5rem; bottom: .85rem; margin: 0; color: #8b958d; font-size: .58rem; letter-spacing: .08em; text-transform: uppercase; }
 .unfold-scroll-hint span { margin-left: .45rem; color: var(--rust); font-size: .9rem; }
+.interior-gallery { margin-top: clamp(3rem, 6vw, 5rem); }
+.interior-heading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-bottom: 1.3rem; }
+.interior-heading .project-number { margin-bottom: .65rem; }
+.interior-heading h4 { margin: 0; font-family: var(--serif); font-size: clamp(2rem, 3.2vw, 3rem); font-weight: 400; letter-spacing: -.045em; line-height: 1; }
+.interior-heading h4 em { color: var(--rust); }
+.interior-heading > p { max-width: 230px; margin: 0 0 .12rem; color: var(--muted); font-size: .72rem; line-height: 1.7; }
+.interior-render-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .8rem; }
+.interior-render-slot { min-width: 0; margin: 0; }
+.interior-render-frame {
+  position: relative;
+  display: grid;
+  min-height: 165px;
+  aspect-ratio: 1.15 / 1;
+  place-items: center;
+  overflow: hidden;
+  border: 1px dashed rgba(32,53,45,.23);
+  border-radius: 20px;
+  background-color: #efeee7;
+  background-image: linear-gradient(rgba(32,53,45,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(32,53,45,.035) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.interior-render-frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.render-placeholder { position: relative; z-index: 1; display: grid; justify-items: center; gap: .5rem; color: #758078; font-size: .54rem; font-weight: 600; letter-spacing: .1em; text-align: center; text-transform: uppercase; }
+.render-placeholder b { display: grid; width: 2rem; height: 2rem; place-items: center; color: var(--rust); border: 1px solid rgba(202,117,94,.38); border-radius: 50%; font-size: 1.1rem; font-weight: 400; }
+.interior-render-slot figcaption { display: flex; justify-content: space-between; gap: .5rem; padding: .65rem .1rem 0; color: var(--ink); font-size: .63rem; font-weight: 600; }
+.interior-render-slot figcaption span + span { color: var(--muted); font-size: .56rem; font-weight: 400; letter-spacing: .08em; }
 .project-footnote { display: flex; align-items: start; gap: .75rem; max-width: 560px; margin: 2.5rem 0 0; color: var(--muted); font-family: var(--serif); font-size: 1.18rem; line-height: 1.45; }
 .footnote-star { color: var(--rust); font-family: var(--sans); font-size: 1.25rem; }
 
@@ -285,6 +311,12 @@ a { color: inherit; }
   .unfold-layer figcaption { top: 50%; right: 0; gap: .32rem; padding: .3rem .48rem; font-size: .46rem; }
   .unfold-layer figcaption span { font-size: .53rem; }
   .unfold-scroll-hint { right: 1rem; bottom: .7rem; font-size: .52rem; }
+  .interior-gallery { margin-top: 3rem; }
+  .interior-heading { display: block; margin-bottom: 1rem; }
+  .interior-heading h4 { font-size: clamp(2.1rem, 9vw, 2.8rem); }
+  .interior-heading > p { max-width: 360px; margin-top: .75rem; font-size: .68rem; }
+  .interior-render-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .interior-render-frame { min-height: 190px; aspect-ratio: 1.55 / 1; border-radius: 18px; }
   .project-footnote { margin-top: 1.8rem; font-size: 1.05rem; }
   .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
   .contact-heading h2 { font-size: clamp(4rem, 17vw, 6.5rem); }

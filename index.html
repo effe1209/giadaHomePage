@@ -11,7 +11,6 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
   <link rel="icon" href="assets/icon.png" type="image/png" />
   <link rel="stylesheet" href="styles/main.css" />
-  <script>document.documentElement.classList.add('js');</script>
   <script src="scripts/main.js" defer></script>
 </head>
 <body>
@@ -75,19 +74,37 @@
             <p>Una scuola elementare dove il colore diventa linguaggio e strumento di orientamento. Le porte colorate rendono le aule più facili da riconoscere; le grandi arcate a vista della palestra valorizzano uno spazio luminoso, mentre le sedie di colori diversi nell’aula d’arte invitano alla creatività e all’espressione personale.</p>
           </div>
 
-          <div class="project-gallery" aria-label="Elaborati del progetto Scuola Primaria Cromatica">
-            <figure class="drawing-card drawing-card-feature" data-reveal>
-              <div class="drawing-image"><img src="assets/1.png" alt="Elaborato architettonico della Scuola Primaria Cromatica, tavola 1" loading="lazy" /></div>
-              <figcaption><span>Elaborato di progetto</span><span>01 <i>↗</i></span></figcaption>
-            </figure>
-            <figure class="drawing-card" data-reveal>
-              <div class="drawing-image"><img src="assets/2.png" alt="Elaborato architettonico della Scuola Primaria Cromatica, tavola 2" loading="lazy" /></div>
-              <figcaption><span>Elaborato di progetto</span><span>02 <i>↗</i></span></figcaption>
-            </figure>
-            <figure class="drawing-card" data-reveal>
-              <div class="drawing-image"><img src="assets/3.png" alt="Elaborato architettonico della Scuola Primaria Cromatica, tavola 3" loading="lazy" /></div>
-              <figcaption><span>Elaborato di progetto</span><span>03 <i>↗</i></span></figcaption>
-            </figure>
+          <div class="unfold-scroll" data-unfold>
+            <div class="unfold-sticky">
+              <div class="unfold-copy">
+                <p class="unfold-kicker"><span class="status-dot"></span> Scorri per esplorare</p>
+                <h4>Da chiusa,<br />la scuola si <em>apre.</em></h4>
+                <p>Tre livelli si separano e raccontano il progetto dall’alto verso gli spazi che lo compongono.</p>
+                <ol class="unfold-steps" aria-label="Elementi del progetto">
+                  <li data-step="0" aria-current="step"><span>01</span> Copertura</li>
+                  <li data-step="1"><span>02</span> Spazi interni</li>
+                  <li data-step="2"><span>03</span> Spazi esterni</li>
+                </ol>
+              </div>
+
+              <div class="unfold-visual" role="group" aria-label="Esploso assonometrico della scuola">
+                <div class="unfold-model">
+                  <figure class="unfold-layer unfold-roof">
+                    <img src="assets/1.png" alt="La copertura della scuola" loading="lazy" />
+                    <figcaption>01 <span>Copertura</span></figcaption>
+                  </figure>
+                  <figure class="unfold-layer unfold-interior">
+                    <img src="assets/2.png" alt="Gli spazi interni della scuola" loading="lazy" />
+                    <figcaption>02 <span>Spazi interni</span></figcaption>
+                  </figure>
+                  <figure class="unfold-layer unfold-grounds">
+                    <img src="assets/3.png" alt="La scuola e gli spazi esterni" loading="lazy" />
+                    <figcaption>03 <span>Spazi esterni</span></figcaption>
+                  </figure>
+                </div>
+              </div>
+              <p class="unfold-scroll-hint" aria-hidden="true">Continua a scorrere <span>↓</span></p>
+            </div>
           </div>
           <p class="project-footnote"><span class="footnote-star" aria-hidden="true">✳</span> Un progetto pensato per crescere con chi lo abita: inclusivo, accogliente e a misura di bambino.</p>
         </article>

@@ -23,17 +23,17 @@ if (unfoldTrack) {
   const layers = [
     {
       element: unfoldTrack.querySelector('.unfold-roof'),
-      from: -28, to: -128, tiltFrom: 0, tiltTo: -18,
+      from: -32, to: -168, tiltFrom: 0, tiltTo: -24,
       start: 0.03, end: 0.66, labelStart: 0.02, labelEnd: 0.29,
     },
     {
       element: unfoldTrack.querySelector('.unfold-interior'),
-      from: 0, to: -4, tiltFrom: 0, tiltTo: -1,
+      from: 0, to: -8, tiltFrom: 0, tiltTo: -2,
       start: 0.18, end: 0.73, labelStart: 0.25, labelEnd: 0.52,
     },
     {
       element: unfoldTrack.querySelector('.unfold-grounds'),
-      from: 28, to: 128, tiltFrom: 0, tiltTo: 12,
+      from: 32, to: 168, tiltFrom: 0, tiltTo: 16,
       start: 0.24, end: 0.84, labelStart: 0.48, labelEnd: 0.76,
     },
   ];
@@ -48,15 +48,15 @@ if (unfoldTrack) {
 
   const renderUnfold = (progress) => {
     const compact = window.matchMedia('(max-width: 620px)').matches;
-    const distanceScale = compact ? Math.min(0.62, window.innerHeight / 1000) : 1;
+    const distanceScale = compact ? Math.min(0.5, window.innerHeight / 1100) : 1;
 
     layers.forEach(({ element, from, to, tiltFrom, tiltTo, start, end, labelStart, labelEnd }) => {
       const opening = phaseProgress(progress, start, end);
       const offset = (from + (to - from) * opening) * distanceScale;
       const angle = tiltFrom + (tiltTo - tiltFrom) * opening;
       const scale = element.classList.contains('unfold-roof')
-        ? 1 - opening * 0.035
-        : 1 + opening * 0.015;
+        ? 1 + opening * 0.015
+        : 1 + opening * 0.04;
       element.style.transform = `translate3d(0, ${offset}px, 0) rotateX(${angle}deg) scale(${scale})`;
 
       const caption = element.querySelector('figcaption');

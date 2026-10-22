@@ -126,7 +126,7 @@ a { color: inherit; }
 .project-number span { margin-inline: .4rem; color: var(--rust); }
 .project-intro h3 { margin: 0; font-family: var(--serif); font-size: clamp(2.5rem, 4.4vw, 4.1rem); font-weight: 400; letter-spacing: -.045em; line-height: .98; }
 .project-intro h3 em { color: var(--rust); }
-.project-intro > p { max-width: 270px; margin: 0 0 .1rem; color: var(--muted); font-size: .81rem; line-height: 1.8; }
+.project-intro > p { max-width: 270px; margin: 0 0 .1rem; color: var(--muted); font-size: .81rem; line-height: 1.8; transform: translateY(.9rem); }
 .unfold-scroll { position: relative; height: auto; }
 .unfold-sticky {
   position: relative;
@@ -138,7 +138,7 @@ a { color: inherit; }
   overflow: hidden;
   padding: 2rem 1.5rem 2.5rem;
   border: 1px solid rgba(32,53,45,.12);
-  border-radius: 3px 32px 3px 3px;
+  border-radius: 34px;
   background: linear-gradient(145deg, #f4f3ec, #ebeae2);
   box-shadow: 0 22px 55px rgba(32,53,45,.055);
 }
@@ -159,12 +159,12 @@ a { color: inherit; }
   min-width: 0;
   min-height: 500px;
   place-items: center;
-  overflow: hidden;
+  overflow: visible;
   isolation: isolate;
-  border: 1px solid rgba(32,53,45,.1);
-  border-radius: 2px 36px 2px 2px;
-  background: radial-gradient(ellipse at 52% 48%, rgba(215,231,140,.3), transparent 48%), linear-gradient(145deg, #f8f7f1, #e9e9df);
-  box-shadow: 0 20px 50px rgba(32,53,45,.045);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
   perspective: 1200px;
 }
 .unfold-visual::before {
@@ -227,7 +227,7 @@ a { color: inherit; }
 
 @media (prefers-reduced-motion: no-preference) {
   .js .unfold-scroll { height: 195vh; }
-  .js .unfold-sticky { position: sticky; top: 0; height: 100vh; height: 100svh; min-height: 520px; }
+  .js .unfold-sticky { position: sticky; top: 0; height: 100vh; height: 100svh; min-height: 580px; }
   .js .unfold-layer { transform: translate3d(0, 0, 0); transition: none; }
   .js .unfold-layer figcaption { opacity: 0; }
 }
@@ -271,14 +271,14 @@ a { color: inherit; }
   .section-intro { max-width: 360px; }
   .project-intro { display: block; padding-bottom: 1.5rem; }
   .project-intro h3 { font-size: clamp(2.7rem, 12vw, 3.8rem); }
-  .project-intro > p { max-width: 500px; margin-top: 1.25rem; }
+  .project-intro > p { max-width: 500px; margin-top: 1.25rem; transform: none; }
   .unfold-sticky { display: flex; min-height: 660px; flex-direction: column; align-items: stretch; justify-content: center; gap: .4rem; padding: 1.4rem .8rem 2.7rem; }
   .unfold-copy h4 { margin: .7rem 0 .4rem; font-size: clamp(2.1rem, 9vw, 2.85rem); }
   .unfold-copy > p:not(.unfold-kicker) { max-width: 390px; font-size: .68rem; }
   .unfold-steps { display: flex; justify-content: space-between; gap: .35rem; margin-top: .95rem; }
   .unfold-steps li { align-items: flex-start; flex-direction: column; gap: .05rem; font-size: .57rem; }
   .unfold-steps li[aria-current="step"] { transform: translateY(-2px); }
-  .unfold-visual { width: 100%; min-height: 300px; flex: 1; }
+  .unfold-visual { width: 100%; min-height: 320px; flex: 1; }
   .unfold-model { width: 100%; aspect-ratio: 1.55 / 1; }
   .unfold-roof { transform: translate3d(0, -20px, 0); }
   .unfold-grounds { transform: translate3d(0, 20px, 0); }

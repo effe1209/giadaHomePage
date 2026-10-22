@@ -149,13 +149,46 @@ a { color: inherit; }
 .unfold-steps li span { color: #aeb5ae; font-size: .59rem; letter-spacing: .08em; }
 .unfold-steps li[aria-current="step"] { color: var(--ink); font-weight: 600; transform: translateX(4px); }
 .unfold-steps li[aria-current="step"] span { color: var(--rust); }
-.unfold-visual { position: relative; display: grid; min-width: 0; min-height: 310px; place-items: center; perspective: 1200px; }
-.unfold-model { position: relative; width: 100%; max-width: 720px; aspect-ratio: 2.25 / 1; transform-style: preserve-3d; }
+.unfold-visual {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  min-height: 400px;
+  place-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid rgba(32,53,45,.1);
+  border-radius: 2px 36px 2px 2px;
+  background: radial-gradient(ellipse at 52% 48%, rgba(215,231,140,.3), transparent 48%), linear-gradient(145deg, #f8f7f1, #e9e9df);
+  box-shadow: 0 20px 50px rgba(32,53,45,.045);
+  perspective: 1200px;
+}
+.unfold-visual::before {
+  position: absolute;
+  z-index: 0;
+  width: min(76%, 320px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(32,53,45,.09);
+  border-radius: 50%;
+  background: repeating-radial-gradient(circle, transparent 0 34px, rgba(32,53,45,.045) 35px 36px);
+  content: "";
+}
+.unfold-visual::after {
+  position: absolute;
+  z-index: 0;
+  right: 1rem;
+  bottom: .85rem;
+  left: 1rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(32,53,45,.17), transparent);
+  content: "";
+}
+.unfold-model { position: relative; z-index: 1; width: 100%; max-width: 720px; aspect-ratio: 2.25 / 1; transform-style: preserve-3d; }
 .unfold-layer { position: absolute; inset: 0; display: grid; place-items: center; margin: 0; transform-origin: center; transform-style: preserve-3d; }
 .unfold-layer img { display: block; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 12px 12px rgba(32,53,45,.08)); }
-.unfold-roof { z-index: 3; transform: translate3d(0, -58px, 0); }
+.unfold-roof { z-index: 3; transform: translate3d(0, -28px, 0); }
 .unfold-interior { z-index: 2; }
-.unfold-grounds { z-index: 1; transform: translate3d(0, 58px, 0); }
+.unfold-grounds { z-index: 1; transform: translate3d(0, 28px, 0); }
 .unfold-layer figcaption { position: absolute; top: 50%; right: 0; display: flex; align-items: center; gap: .55rem; padding: .38rem .65rem; color: var(--ink); background: rgba(248,247,242,.94); border: 1px solid rgba(32,53,45,.11); border-radius: 999px; font-size: .55rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; opacity: 1; transform: translateY(-50%); white-space: nowrap; }
 .unfold-layer figcaption span { color: var(--muted); font-weight: 500; letter-spacing: .03em; text-transform: none; }
 .unfold-scroll-hint { position: absolute; right: 0; bottom: 1rem; margin: 0; color: #8b958d; font-size: .61rem; letter-spacing: .08em; text-transform: uppercase; }
@@ -189,7 +222,7 @@ a { color: inherit; }
 .js [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
 
 @media (prefers-reduced-motion: no-preference) {
-  .js .unfold-scroll { height: 220vh; }
+  .js .unfold-scroll { height: 195vh; }
   .js .unfold-sticky { position: sticky; top: 0; height: 100vh; height: 100svh; min-height: 520px; }
   .js .unfold-layer { transform: translate3d(0, 0, 0); transition: none; }
   .js .unfold-layer figcaption { opacity: 0; }
@@ -241,10 +274,10 @@ a { color: inherit; }
   .unfold-steps { display: flex; justify-content: space-between; gap: .35rem; margin-top: .95rem; }
   .unfold-steps li { align-items: flex-start; flex-direction: column; gap: .05rem; font-size: .62rem; }
   .unfold-steps li[aria-current="step"] { transform: translateY(-2px); }
-  .unfold-visual { width: 100%; min-height: 230px; flex: 1; }
+  .unfold-visual { width: 100%; min-height: 250px; flex: 1; }
   .unfold-model { width: 100%; aspect-ratio: 1.55 / 1; }
-  .unfold-roof { transform: translate3d(0, -38px, 0); }
-  .unfold-grounds { transform: translate3d(0, 38px, 0); }
+  .unfold-roof { transform: translate3d(0, -20px, 0); }
+  .unfold-grounds { transform: translate3d(0, 20px, 0); }
   .unfold-layer figcaption { top: 50%; right: 0; gap: .32rem; padding: .3rem .48rem; font-size: .46rem; }
   .unfold-layer figcaption span { font-size: .53rem; }
   .unfold-scroll-hint { bottom: 1.5rem; font-size: .55rem; }
@@ -260,7 +293,7 @@ a { color: inherit; }
 }
 
 @media (max-width: 620px) and (prefers-reduced-motion: no-preference) {
-  .js .unfold-scroll { height: 205vh; }
+  .js .unfold-scroll { height: 190vh; }
   .js .unfold-sticky { min-height: 100vh; min-height: 100svh; }
 }
 

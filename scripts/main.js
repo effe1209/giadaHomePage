@@ -99,3 +99,61 @@ if (unfoldTrack) {
     window.addEventListener('resize', requestUnfoldUpdate);
   }
 }
+
+const clubCarousel = document.querySelector('[data-club-carousel]');
+
+if (clubCarousel) {
+  const clubProject = clubCarousel.closest('.club-project');
+  const carouselTrack = clubCarousel.querySelector('.club-carousel-track');
+  const slides = [...clubCarousel.querySelectorAll('.club-slide')];
+  const currentPage = document.querySelector('[data-carousel-current]');
+  const previousButton = document.querySelector('[data-carousel-step="-1"]');
+  const nextButton = document.querySelector('[data-carousel-step="1"]');
+  let activeSlide = 0;
+
+  const updateCarousel = () => {
+    const scrollRange = clubProject.offsetHeight - clubCarousel.clientHeight;
+    const progress = scrollRange > 0
+      ? Math.min(1, Math.max(0, -clubProject.getBoundingClientRect().top / scrollRange))
+      : 0;
+    const horizontalRange = carouselTrack.scrollWidth - clubCarousel.clientWidth;
+    carouselTrack.style.transform = `translate3d(${-horizontalRange * progress}px, 0, 0)`;
+    activeSlide = Math.round(progress * (slides.length - 1));
+    currentPage.textContent = String(activeSlide + 1).padStart(2, '0');
+    previousButton.disabled = activeSlide === 0;
+    nextButton.disabled = activeSlide === slides.length - 1;
+  };
+
+  const resizeCarousel = () => {
+    const slideWidth = clubCarousel.clientWidth;
+    clubProject.style.height = `${window.innerHeight * slides.length}px`;
+    slides.forEach((slide) => {
+      slide.style.flexBasis = `${slideWidth}px`;
+      slide.style.width = `${slideWidth}px`;
+    });
+    updateCarousel();
+  };
+
+  const goToSlide = (index) => {
+    const nextIndex = Math.min(slides.length - 1, Math.max(0, index));
+    const scrollRange = clubProject.offsetHeight - clubCarousel.clientHeight;
+    window.scrollTo({
+      top: window.scrollY + clubProject.getBoundingClientRect().top
+        + (nextIndex / (slides.length - 1)) * scrollRange,
+      behavior: reduceMotion ? 'auto' : 'smooth',
+    });
+  };
+
+  previousButton.addEventListener('click', () => goToSlide(activeSlide - 1));
+  nextButton.addEventListener('click', () => goToSlide(activeSlide + 1));
+  clubCarousel.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+      event.preventDefault();
+      goToSlide(activeSlide + (event.key === 'ArrowRight' ? 1 : -1));
+    }
+  });
+
+  resizeCarousel();
+  window.addEventListener('scroll', updateCarousel, { passive: true });
+  window.addEventListener('resize', resizeCarousel);
+}
